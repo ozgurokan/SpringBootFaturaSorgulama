@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Your Bill List</title>
+</head>
+<body>
+
+
+<div class="container">
+
+    <h3>Bills</h3>
+    <hr>
+    <div class=>
+        <a th:href="@{/bills/inquiry}" class="btn btn-sm btn-primary border-1 border-dark mb-2" > Back to Home</a>
+        <p class="text-muted " th:text="'Güncel Bakiye:' + ${user.balance}">
+        <p class="text-muted " th:text="'İsim: ' + ${user.firstName} + ' ' + ${user.lastName}">
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th>Bill ID</th>
+            <th>Process Date</th>
+            <th>Type</th>
+            <th>Code</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="tempBill : ${bills}">
+
+            <td th:text="${tempBill.id}">
+            <td th:text="${tempBill.processDate}">
+            <td th:text="${tempBill.billType}">
+            <td th:text="${tempBill.accountId}">
+            <td th:text="${tempBill.amount}">
+            <td th:text="${tempBill.status}">
+
+            <td>
+                <a
+                        th:if="${tempBill.status.equals('unpaid')}"
+                        th:href="@{pay(id=${tempBill.id},code=${tempBill.accountId})}"
+                        class="btn btn-primary btn-sm border border-1 border-dark"
+                >Pay</a>
+
+                <a
+                        th:if="${tempBill.status.equals('paid')}"
+                        th:href="@{payCancel(id=${tempBill.id},code=${tempBill.accountId})}"
+                        class="btn btn-danger btn-sm border border-1 border-dark"
+                >Cancel Paid</a>
+
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

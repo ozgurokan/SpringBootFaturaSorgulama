@@ -1,0 +1,59 @@
+<!--
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  &lt;!&ndash; Bootstrap CSS &ndash;&gt;
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <title>Save User</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <h3>Bill Directory</h3>
+  <hr>
+
+  <p class="h4 mb-4"> Save Bill </p>
+
+  <form action="#" th:action="@{/bills/update}"
+        th:object="${bill}" method="POST">
+
+    &lt;!&ndash;         Add hidden form field to handle the Update&ndash;&gt;
+    <input type="hidden" th:field="*{id}">
+
+    <input type="text" th:field="*{amount}"
+           class="form-control mb-4 w-25" placeholder="Amount">
+
+    <input type="text" th:field="*{processDate}"
+           class="form-control mb-4 w-25" placeholder="Process Date">
+
+    <input type="text" th:field="*{billType}"
+           class="form-control mb-4 w-25" placeholder="Type">
+
+    <input type="text" th:field="*{accountId}"
+           class="form-control mb-4 w-25" placeholder="Account Code">
+
+    <input type="text" th:field="*{status}" disabled
+           class="form-control mb-4 w-25">
+
+
+    <button type="submit" class="btn btn-info col-2"> Save </button>
+
+  </form>
+
+  <hr>
+  <a th:href="@{/bills/list}"> Back to Bill List</a>
+</div>
+
+
+</body>
+
+</html>-->

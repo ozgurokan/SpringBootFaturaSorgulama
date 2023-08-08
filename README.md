@@ -8,10 +8,10 @@
 - Test etmek için sqlScripts klasörü altındaki klasörden scriptleri mySql workbenchde çalıştırıp application.properties dosyasındaki kullanıcı adı ve şifreyi değiştirebilirsiniz.
 
 
-- ![ss-1](screenshots/SpringBoot-1.png)
-- ![ss-2](screenshots/SpringBoot-2.png)
-- ![ss-3](screenshots/SpringBoot-3.png)
-- ![ss-4](screenshots/SpringBoot-4.png)
+![ss-1](screenshots/SpringBoot-1.png)
+![ss-2](screenshots/SpringBoot-2.png)
+![ss-3](screenshots/SpringBoot-3.png)
+![ss-4](screenshots/SpringBoot-4.png)
 
 
 
